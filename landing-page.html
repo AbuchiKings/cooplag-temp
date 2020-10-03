@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="owl/owl.carousel.css">
+    <link rel="stylesheet" href="owl/owl.theme.css">
+    <script src="owl/owl.carousel.js"></script>
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    
+    <title>Document</title>
+
+    <style>
+     
+
+
+        
+        
+    </style>
+
+</head>
+<body onload="callSignUpModal()">
+
+<!--/////////////------------------Modal Section-------------/////////////--------->
+    <!-- Button trigger modal for sign up -->
+    <button id="call-sign-up-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+        Launch sign Up Modal
+    </button>
+
+    <!-- Button trigger modal for sign in -->
+    <button id="call-sign-in-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+        Launch sign in modal
+    </button>
+    
+    <!-- Button trigger modal for forgot password-->
+    <button id="call-forgot-password-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#forgotPasswordModal">
+        Launch forgot password modal
+    </button>
+    
+
+
+<!-------Sign Up Modal -------->
+<div class="modal fade" data-backdrop="static" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog custom-modal-dialog" role="document">
+      <div class="modal-content" style="border-radius: 5px 5px 0px 0px;">
+        <div class="modal-header" style="border: 0px;">
+          <!---<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--->
+          <h5 style="font-weight: bold;" class="text-danger">Create Account</h5>
+          <button type="button" id="close-sign-up-btn-target" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body pt-2 pr-4 pl-4">
+            <form action="" method="post">
+                <div class="form-group pt-1 pl-1 form-div">
+                    <label class="form-label-text" for="">Full Name</label>
+                    <input type="text" class="form-control form-input-field">
+                </div>
+                
+                <div class="form-group pt-1 pl-1 form-div">
+                    <label class="form-label-text" for="">Email</label>
+                    <input type="text" class="form-control form-input-field">
+                </div>
+                <div class="form-group pt-1 pl-1 form-div">
+                    <label class="form-label-text" for="">Password</label>
+                    <input type="text" class="form-control form-input-field">
+                </div>
+                <div class="form-group pt-1 pl-1 form-div">
+                    <label class="form-label-text" for="">Phone Number</label>
+                    <input type="text" class="form-control form-input-field">
+                </div>
+                <div class="form-group pt-1 pl-1">
+                    <h6 class="text-muted text-center">By Click Sign up, you accept terms & Conditions</h6>
+                    <button class="btn btn-block text-white form-btn">Create Account</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="modal-footer modal-bottom">
+            <h6 class="text-muted bg-muted">Already have an account? <span class="text-danger optional-links" id="close-sign-up-btn-trigger" onclick="callSignInModalFromSignUp()">Sign in</span></h6>
+        </div>
+      </div>
+       
+    </div>
+  </div>
+
+
+
+
+  
+    
+<!-------Sign In Modal -------->
+<div class="modal fade" data-backdrop="static" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog custom-modal-dialog" role="document">
+      <div class="modal-content" style="border-radius: 5px 5px 0px 0px;">
+        <div class="modal-header" style="border: 0px;">
+          <!---<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--->
+          <h5 style="font-weight: bold;" class="text-danger">Sign In</h5>
+          <button type="button" id="close-sign-in-btn-target" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body pt-2 pr-4 pl-4 pb-0">
+            <form action="" method="post">
+                <div class="form-group pt-1 pl-1 form-div">
+                    <label class="form-label-text" for="">Email</label>
+                    <input type="text" class="form-control form-input-field">
+                </div>
+                <div class="form-group pt-1 pl-1 form-div">
+                    <label class="form-label-text" for="">Password</label>
+                    <input type="text" class="form-control form-input-field">
+                </div>
+                <div class="form-group pt-1 pl-1">
+                    <button class="btn btn-block text-white login-btn">Sign In</button>
+                </div>
+            </form>
+            <h6 class="forgot-password-item text-primary"><span class="text-primary forgot-password-link" id="callForgotPasswordModal" onclick="callForgotPasswordModal()">Forgot Password ?</span></h6>
+        </div>
+        <div class="modal-footer modal-bottom">
+            <h6 class="text-muted bg-muted">Not yet registered? <span class="text-danger optional-links" id="close-sign-in-btn-trigger" onclick="callSignUpModalFromSignIn()">Sign up</span></h6>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+
+
+
+  <!---------------------------- Forgot Password------------------------------------>
+    
+    
+<!-------forgot password Modal -------->
+<div class="modal fade" data-backdrop="static" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog custom-modal-dialog" role="document">
+      <div class="modal-content" style="border-radius: 5px 5px 0px 0px;">
+        <div class="modal-header" style="border: 0px;">
+          <!---<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--->
+          <h5 style="font-weight: bold;" class="text-danger">Forgot Password</h5>
+          <button type="button" id="close-forgot-password-btn-target" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body pt-2 pr-4 pl-4">
+            <form action="" method="post">
+                <div class="form-group pt-1 pl-1 form-div">
+                    <label class="form-label-text" for="">Phone Number</label>
+                    <input type="text" class="form-control form-input-field">
+                </div>
+                <div class="form-group pt-1 pl-1">
+                    <button class="btn btn-block text-white submit-no-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer modal-bottom">
+            <h6 class="text-muted bg-muted">Not yet registered? <span class="text-danger optional-links" id="close-sign-up2-btn-trigger" onclick="callSignUpFromForgotPass()">Sign up</span></h6>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+
+
+
+  <!--------///////////---------end of Modal Section--------/////--------->
+
+
+   <div class="container-fluid d-none d-md-block">
+        
+        <div class="row">
+            <div class="col-lg-6 col-xl-6 col-md-6" style="padding-right: 0px">
+                <h5 class="p-3">Coop<span style="font-weight: bold;">LAG</span></h5>
+            </div>
+            <div class="col-lg-6 col-xl-6 col-md-6 pt-3 pl-0 pr-4">
+               <ul>
+                   <li class="large-screen-tab-items"><a class="large-screen-tab-links" href="">Pricing</a></li>
+                   <li class="large-screen-tab-items"><a class="large-screen-tab-links" href="">Documentation</a></li>
+                   <li class="large-screen-tab-items"><a class="large-screen-tab-links" href="">Terms of Service</a></li>
+                   <li class="large-screen-tab-items"><a class="large-screen-tab-links" href="">Contact</a></li>
+                   <li class="large-screen-btn"><a role="button" data-toggle="modal" data-target="#signInModal" class="btn btn-success" style="font-weight: bold; color: white; padding: 2px 30px 2px 30px;">Login</a></li>
+               </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid d-none d-md-block" style="margin-bottom: 50px;">
+
+        <!-------first row-->
+        <div class="row first-row"> 
+            <div class="col-lg-6 col-xl-6 col-md-6 first-row-col-body">
+                <span class="card-payment-text">Card Payment</span>
+                <span class="first-row-text-sucks"> sucks, let your customers pay you with</span>
+                <span class="card-payment-text"> Bank Transfer</span><br>
+                <span style="font-style: italic; font-weight: bold;" class="text-muted">Fuspay inter-bank transfer payment automation;</span>
+                <span>With Fuspay, ypur customers can pay you with ease through an inter-bank transfer</span><br>
+                <div class="row mt-3">
+                    <div class="col-lg-6 col-xl-6 col-md-6">
+                        <button class="btn btn-primary btn-block">Get Started</button>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 col-md-6">
+                        <button class="btn btn-outline-warning btn-block">Test Fuspay</button>                    
+                    </div>
+                    </div>  
+                </div>
+
+
+            <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
+                <!----
+                <img id="image-rotate" src="godofwar4.jpg" alt="" style="border-radius: 50px; width: 50%; position: absolute;">
+                    ----->
+            </div>
+            
+        </div>
+        <!------end of first row----->
+
+
+        <!-------2nd row----->
+        <div class="row">
+            <div class="col-lg-5 col-xl-5 col-md-5" style="padding: 0px 80px 0px 80px">
+                <h4 class="text-muted second-row-title-text">How can fuspay help your business?</h4>
+                <div class="row-bar"></div>
+                <span class="second-row-text-content">
+                    Are you thinking about starting a business, 
+                    investing, solving problem in your business, hoping to improving sales, 
+                    train your staff or digitize your services?
+                    We have standby team always readily available to answer 
+                    and respond to you. Let’s hear from you, we will like to be part 
+                    of your business success story if you afford us the chance to serve you.
+                </span>
+            </div>
+
+            <div class="col-lg-7 col-xl-7 col-md-7" style="padding-right: 200px;">
+                <div id="demo" class="carousel slide" data-ride="carousel" style="height: 270px;">
+
+                    <!-- Indicators
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    ---->
+
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <h5 class="text-muted second-row-title-text">Do More for Less</h5>
+                            <div class="row-bar"></div>
+                            <h6 style="line-height: 1.5;" class="second-row-text-content">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Tempora quidem mollitia quibusdam perferendis
+                                 blanditiis atque nesciunt similique voluptate illum 
+                                 iusto impedit doloremque expedita harum,
+                            </h6>
+
+                            <h6 class="slider-text-large-screen-margin second-row-text-content">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Nisi aperiam omnis, eaque eius cupiditate 
+                            </h6>
+                                 
+                            <h6 class="slider-span-sub-text">
+                                <span class="slider-span-text-large-screen">24 hours settlement</span>
+                                officiis nihil? Omnis blanditiis cupiditate deleniti.
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+
+                            <h6 class="slider-span-sub-text">
+                                <span class="slider-span-text-large-screen">Zero Failure Rate</span>
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+                                
+                                
+                        
+                        </div>
+                        <div class="carousel-item">
+                            <h5 class="text-muted second-row-title-text">Automated Bank Transfer</h5>
+                            <div class="row-bar"></div>
+                            <h6 style="line-height: 1.5;" class="second-row-text-content">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Tempora quidem mollitia quibusdam perferendis
+                                 blanditiis atque nesciunt similique voluptate illum 
+                                 iusto impedit doloremque expedita harum,
+                            </h6>
+
+                            <h6 class="slider-text-large-screen-margin second-row-text-content">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Nisi aperiam omnis, eaque eius cupiditate 
+                            </h6>
+                                 
+                            <h6 class="slider-span-sub-text">
+                                <span class="slider-span-text-large-screen">24 hours settlement</span>
+                                officiis nihil? Omnis blanditiis cupiditate deleniti.
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+
+                            <h6 class="slider-span-sub-text">
+                                <span class="slider-span-text-large-screen">Zero Failure Rate</span>
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+                        </div>
+                        <div class="carousel-item">
+                            <h5 class="text-muted second-row-title-text">Discover the power of fuspay</h5>
+                            <div class="row-bar"></div>
+                            <h6 style="line-height: 1.5;" class="second-row-text-content">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Tempora quidem mollitia quibusdam perferendis
+                                 blanditiis atque nesciunt similique voluptate illum 
+                                 iusto impedit doloremque expedita harum,
+                            </h6>
+
+                            <h6 class="slider-text-large-screen-margin second-row-text-content">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Nisi aperiam omnis, eaque eius cupiditate 
+                            </h6>
+                                 
+                            <h6 class="slider-span-sub-text">
+                                <span class="slider-span-text-large-screen">24 hours settlement</span>
+                                officiis nihil? Omnis blanditiis cupiditate deleniti.
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+
+                            <h6 class="slider-span-sub-text">
+                                <span class="slider-span-text-large-screen">Zero Failure Rate</span>
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+                        </div>
+                    </div>
+
+                      <!-- Left and right controls --->
+                    <a id="goLeft" style="display: none;" class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a id="goRight" style="display: none;" class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                   
+                </div>
+                <span id="slide-left" class="fa fa-arrow-left" style="border-radius: 10px; border: 3px groove olive; padding: 2px;"></span>
+                <span id="slide-right" class="fa fa-arrow-right" style="border-radius: 10px; border: 3px groove olive; padding: 2px;"></span>
+            </div>
+
+            
+        </div>
+        <!--------End of 2nd row-------->
+
+
+
+        <!--------3rd row------>
+        <div class="row p-5">
+            <div class="col-lg-12 col-xl-12 col-md-12 row-third-container-body">
+                <div class="row p-4">
+                    <div class="col-lg-6 col-xl-6 col-md-6 pt-3">
+                        <h2 class="third-row-text-orange"><span class="third-row-text-bold">MAXIMUM</span> COMFORT</h2>
+                        <h6 class="text-white large-screen-max-title-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum error, 
+                            culpa consequuntur, laudantium quod assumenda iusto dolores molestiae modi, 
+                            dolor quisquam illo nemo fugit voluptate aut. Eius eos quidem maiores.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci corporis 
+                            quod voluptatum, dolorem, sit saepe nostrum quia quisquam eveniet nihil a culpa, 
+                            fugit sed modi repellendus distinctio aspernatur quaerat.
+                        </h6>
+
+                        <div class="third-row-btn-container">
+                            <button class="btn btn-primary third-row-get-started-btn">Get Started</button>
+                            <button class="btn btn-outline-primary third-row-login-btn">Login</button>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-lg-6 col-xl-6 col-md-6 p-3 pb-0 third-row-small-container-body">
+                        <h5 class="text-white large-screen-press-text">PRESS</h5>
+                        <h6 class="third-row-small-body-text"> culpa consequuntur, laudantium <br>quod assumenda iust dolores molestiae </h6>
+                        
+                        <div class="row third-row-image-con-carousel">     
+                            <div class="owl-carousel"> 
+                                <div class="item">
+                                    <img src="index75434567.png" class="img-fluid third-row-image">
+                                </div>
+                        
+                                <div class="item">
+                                    <img src="index8997.png" class="img-fluid third-row-image">
+                                </div>
+
+                                <div class="item">
+                                    <img src="index09865.png" class="img-fluid third-row-image">
+                                </div>
+
+                                <div class="item">
+                                    <img src="index75434567.png" class="img-fluid third-row-image">
+                                </div>
+
+                                <div class="item">
+                                    <img src="index8997.png" class="img-fluid third-row-image">
+                                </div>
+
+                                <div class="item">
+                                    <img src="index09865.png" class="img-fluid third-row-image">
+                                </div>
+                            </div>
+                            
+                        </div>   
+                    </div>
+
+
+                </div>
+
+
+                <div class="row third-row-inner-row-body-section-two">
+                    <div class="col-lg-4 col-xl-4 col-md-6" style="padding-left: 50px;">
+                        <h3 class="third-row-topic-text-title">What do you Gain <br> using Fuspay</h3>
+                        <div class="row-bar"></div>
+
+                        <div class="row" style="margin-top: 150px;">
+                            <div class="col-lg-12 col-xl-12 col-md-12 third-row-inner-row-col-body">
+                                <h2 class="third-row-inner-text-title">Most Successful <br> transactions</h2>
+                                <div class="row-bar"></div>
+                                <h6 class="third-row-inner-col-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Dolorum, laboriosam ullam! Fugiat sed sit architecto, blanditiis 
+                                    nam a ipsam cupiditate nemo deleniti sunt excepturi illo 
+                                    culpa consequatur minus laudantium odit.
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4 col-md-6 third-row-inner-body-second-col">
+                        
+                        <div class="row" style="margin-top: 150px;">
+                            <div class="col-lg-12 col-xl-12 col-md-12" style="border-radius: 10px; background-color: white; padding: 40px 20px 80px 20px">
+                                <h2 class="third-row-inner-text-title">More for <br> Less</h2>
+                                <div class="row-bar"></div>
+                                <h6 class="third-row-inner-col-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Dolorum, laboriosam ullam! Fugiat sed sit architecto, blanditiis 
+                                    nam a ipsam cupiditate nemo deleniti sunt excepturi illo 
+                                    culpa consequatur minus laudantium odit.
+                                </h6>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 80px;">
+                            <div class="col-lg-12 col-xl-12 col-md-12" style="border-radius: 10px; background-color: white; padding: 40px 20px 80px 20px">
+                                <h2 class="third-row-inner-text-title">Highly Safe & <br> Secured</h2>
+                                <div class="row-bar"></div>
+                                <h6 class="third-row-inner-col-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Dolorum, laboriosam ullam! Fugiat sed sit architecto, blanditiis 
+                                    nam a ipsam cupiditate nemo deleniti sunt excepturi illo 
+                                    culpa consequatur minus laudantium odit.
+                                </h6>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-xl-4 col-md-6" style="padding: 50px;">
+                        <div class="row" style="margin-top: 80px;">
+                            <div class="col-lg-12 col-xl-12 col-md-12 third-row-inner-row-col-body">
+                                <h2 class="third-row-inner-text-title">Ease of <br> use</h2>
+                                <div class="row-bar"></div>
+                                <h6 class="third-row-inner-col-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Dolorum, laboriosam ullam! Fugiat sed sit architecto, blanditiis 
+                                    nam a ipsam cupiditate nemo deleniti sunt excepturi illo 
+                                    culpa consequatur minus laudantium odit.
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <!----------end of 3rd row-->
+
+    </div><!--------End of body container fluid-------->
+
+
+
+
+
+
+
+    <div class="container d-none d-md-block">
+
+        <!-----------4th row------------->
+        <div class="row">
+            <div class="col-lg-4 col-xl-4 col-md-4">
+                <h3 class="text-muted large-screen-join-text-title">Join the community of business powered by fuspay</h3>
+            </div>
+            <div class="col-lg-4 col-xl-4 col-md-4">
+                <h6 class="text-muted large-screen-join-sub-text">
+                    Lorem ipsum dolor sit, amet conse.<br>
+                    Officiis veritatis illum consectetur 
+                </h6>
+                <h6 class="text-muted large-screen-join-sub-text">
+                    Lorem ipsum dolor sit, amet consec.<br>
+                    Officiis veritatis illum consectetu
+                </h6>
+            </div>
+
+            <div class="col-lg-4 col-xl-4 col-md-4">
+                <h6 class="text-muted fourth-row-text-title">What's your industry</h6>
+                <div style="overflow: hidden;" id="body-text">
+                    <h4 class="sib">Betting</h4>
+                    <h4 class="sib">Airlines</h4>
+                    <h4 class="sib">E-commerce</h4>
+                    <h4 class="sib">Transportation</h4>
+                    <h4 class="sib">Digital Solution</h4>
+                </div> 
+            </div>
+
+
+
+            <div class="col-lg-8 col-xl-8 col-md-8">
+                <div class="row" style="margin-top: -90px;">
+                    <div class="col-lg-2 col-xl-2 col-md-2">
+                        <h6 class="our-client-text-title">Our Client</h6>
+                    </div>
+
+                    <div class="col-lg-9 col-xl-9 col-md-9">
+                        <div class="owl-carousel"> 
+                            <div class="item">
+                                <img src="index75434567.png" class="img-fluid third-row-image">
+                            </div>
+                    
+                            <div class="item">
+                                <img src="index8997.png" class="img-fluid third-row-image">
+                            </div>
+
+                            <div class="item">
+                                <img src="index09865.png" class="img-fluid third-row-image">
+                            </div>
+
+                            <div class="item">
+                                <img src="index75434567.png" class="img-fluid third-row-image">
+                            </div>
+
+                            <div class="item">
+                                <img src="index8997.png" class="img-fluid third-row-image">
+                            </div>
+
+                            <div class="item">
+                                <img src="index09865.png" class="img-fluid third-row-image">
+                            </div>
+                        </div>
+  
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+        </div>
+        <!---------End of 4th row---------->
+    </div>
+
+
+
+    <!---Smalll device---------->
+    <div class="container-fluid d-none d-sm-block d-block d-md-none d-lg-none d-xl-none">
+        <!-------First row--------->
+        <div class="row small-screen-main-tab">
+            <div class="col-sm-6 col-6">
+                <h5 class="small-screen-main-site-name">Coop<span style="font-weight: bold">LAG</span></h5>
+            </div>
+            <div class="col-sm-6 col-6 p-3">
+
+                <div class="d-flex justify-content-end">
+                    <div style="padding: 10px">
+                        <a role="button" data-toggle="modal" data-target="#signInModal" class="btn btn-success" style="font-weight: bold; color: white; padding: 2px 20px 2px 20px;">Login</a> 
+                    </div>
+                    <div style="padding: 10px">
+                        <span class="fa fa-bars small-screen-menu-tab" style="font-size: 30px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!---------End of first row------->
+
+
+        <!---------2nd row------>
+        <div class="row">
+            <div class="col-sm-12 col-12 small-screen-second-row-col-body">
+                <span class="small-screen-second-row-text-caption-title">Card Payment</span>
+                <span class="small-screen-second-row-text-basic"> sucks, let your customers pay you with</span>
+                <span class="small-screen-second-row-text-caption-title"> Bank Transfer</span><br>
+                <span class="small-screen-text-ital" class="text-muted">Fuspay inter-bank transfer payment automation;</span>
+                <span>With Fuspay, ypur customers can pay you with ease through an inter-bank transfer</span><br>
+                <div class="row mt-3">
+                    <div class="col-sm-6 col-6">
+                        <button class="btn btn-primary btn-block">Get Started</button>
+                    </div>
+                    <div class="col-sm-6 col-6">
+                        <button class="btn btn-outline-warning btn-block">Test Fuspay</button>                    </div>
+                </div>  
+            </div>
+
+            <div class="col-sm-12 col-12 small-screen-second-row-col-body">
+                <h4 class="small-screen-title-text text-muted">How can fuspay help your <br> business?</h4>
+                <div class="row-bar"></div>
+                <span class="small-screen-basics-text text-muted">Are you thinking about starting a business, 
+                    investing, solving problem in your business, hoping to improving sales, 
+                    train your staff or digitize your services?
+                    We have standby team always readily available to answer 
+                    and respond to you. Let’s hear from you, we will like to be part 
+                    of your business success story if you afford us the chance to serve you.
+                </span>
+            </div>
+
+
+
+            <div class="col-sm-12 col-12 small-screen-second-row-col-body">
+                <div id="demo" class="carousel slide small-screen-carousel-con" data-ride="carousel">
+                    <!-- Indicators
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    --------
+
+                    <!--------- The slideshow -------->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <h5 class="text-muted small-screen-title-text">Do More for Less</h5>
+                            <div class="row-bar"></div>
+
+                            <h6 class="small-screen-first-text-slider">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Tempora quidem mollitia quibusdam perferendis
+                                 blanditiis atque nesciunt similique voluptate illum 
+                                 iusto impedit doloremque expedita harum,
+                            </h6>
+
+                            <h6 class="slider-text-small-screen-margin">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Nisi aperiam omnis, eaque eius cupiditate 
+                            </h6>
+                                 
+                            <h6 class="small-screen-first-text-slider">
+                                <span class="slider-span-text-small-screen">24 hours settlement</span>
+                                officiis nihil? Omnis blanditiis cupiditate deleniti.
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6 class="small-screen-first-text-slider">
+
+                            <h6 class="small-screen-first-text-slider">
+                                <span class="slider-span-text-small-screen">Zero Failure Rate</span>
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+                        </div>
+                        <div class="carousel-item">
+                            <h5 class="text-muted small-screen-title-text">Automated Bank Transfer</h5>
+                            <div class="row-bar"></div>
+                            <h6 class="small-screen-first-text-slider">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Tempora quidem mollitia quibusdam perferendis
+                                 blanditiis atque nesciunt similique voluptate illum 
+                                 iusto impedit doloremque expedita harum,
+                            </h6>
+
+                            <h6 class="slider-text-small-screen-margin">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Nisi aperiam omnis, eaque eius cupiditate 
+                            </h6>
+                                 
+                            <h6 class="small-screen-first-text-slider">
+                                <span class="slider-span-text-small-screen">24 hours settlement</span>
+                                officiis nihil? Omnis blanditiis cupiditate deleniti.
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+
+                            <h6 class="small-screen-first-text-slider">
+                                <span class="slider-span-text-small-screen">Zero Failure Rate</span>
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+                        </div>
+                        <div class="carousel-item">
+                            <h5 class="text-muted small-screen-title-text">Discover the power of fuspay</h5>
+                            <div class="row-bar"></div>
+                            <h6 class="small-screen-first-text-slider">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Tempora quidem mollitia quibusdam perferendis
+                                 blanditiis atque nesciunt similique voluptate illum 
+                                 iusto impedit doloremque expedita harum,
+                            </h6>
+
+                            <h6 class="slider-text-small-screen-margin">Lorem ipsum dolor, sit amet consectetur 
+                                adipisicing elit. Nisi aperiam omnis, eaque eius cupiditate 
+                            </h6>
+                                 
+                            <h6 class="small-screen-first-text-slider">
+                                <span class="slider-span-text-small-screen">24 hours settlement</span>
+                                officiis nihil? Omnis blanditiis cupiditate deleniti.
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+
+                            <h6 class="small-screen-first-text-slider">
+                                <span class="slider-span-text-small-screen">Zero Failure Rate</span>
+                                blanditiis atque nesciunt similique voluptate illum 
+                            </h6>
+                        </div>
+                    </div>
+
+                      <!--------- Left and right controls -------->
+                    <a class="goLeft" style="display: none;" class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="goRight" style="display: none;" class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                   
+                </div>
+                <span class="fa fa-arrow-left slide-left" style="border-radius: 10px; border: 3px groove olive; padding: 2px;"></span>
+                <span class="fa fa-arrow-right slide-right" style="border-radius: 10px; border: 3px groove olive; padding: 2px;"></span>
+            </div>
+
+
+        </div>
+
+        <!-------- end of 2nd row------->
+
+
+    <!------- 3rd row------------->
+
+        <div class="row p-3">
+            <div class="col-sm-12 col-12 pt-5" style="background-color:rgb(14, 5, 75); border-radius: 20px; padding-bottom: 50px;">
+             
+                <div class="row p-3">
+                    <div class="col-sm-12 col-12 mb-4">
+                        <h3 class="small-screen-row-third-max"><span class="small-screen-row-third-max-bold">MAXIMUM</span> COMFORT</h2>
+                        <h6 class="text-white mt-4 mb-3 small-screen-row-third-first-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum error, 
+                            culpa consequuntur, laudantium quod assumenda iusto dolores molestiae modi, 
+                            dolor quisquam illo nemo fugit voluptate aut. Eius eos quidem maiores.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci corporis 
+                            quod voluptatum, dolorem, sit saepe nostrum quia quisquam eveniet nihil a culpa, 
+                            fugit sed modi repellendus distinctio aspernatur quaerat.
+                        </h6>
+                        <button class="btn btn-primary small-screen-get-started-btn">Get Started</button>
+                        <button class="btn btn-outline-primary small-screen-get-started-btn text-white">Login</button>
+                    </div>
+
+
+                    <div class="col-sm-12 col-12 p-3 small-screen-press-body-container">
+                        <h6 class="text-white">PRESS</h6>
+                        <h6 class="small-screen-press-basics-text"> culpa consequuntur, laudantium <br>quod assumenda iust dolores molestiae </h6>
+                        
+                        <div class="row" style="margin-top: 30px;">
+                            <div class="col-lg-12 col-xl-12 col-md-12">
+                                <div class="row small-screen-row-body-col-image">
+
+                                    <div class="owl-carousel2"> 
+                                        <div class="item">
+                                            <img src="index75434567.png" class="img-fluid small-screen-image-logo">
+                                        </div>
+                                
+                                        <div class="item">
+                                            <img src="index8997.png" class="img-fluid small-screen-image-logo">
+                                        </div>
+        
+                                        <div class="item">
+                                            <img src="index09865.png" class="img-fluid small-screen-image-logo">
+                                        </div>
+        
+                                        <div class="item">
+                                            <img src="index75434567.png" class="img-fluid small-screen-image-logo">
+                                        </div>
+        
+                                        <div class="item">
+                                            <img src="index8997.png" class="img-fluid small-screen-image-logo">
+                                        </div>
+        
+                                        <div class="item">
+                                            <img src="index09865.png" class="img-fluid small-screen-image-logo">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                <!----end of inner row--------->
+     
+                <div class="col-sm col-12 mt-4 small-screen-main-body-text">
+                    <h4 class="small-screen-col-title-text">What do you Gain <br> using Fuspay</h4>
+                    <div class="row-bar"></div>
+                    <div class="row" style="margin-top: 50px;">
+                        <div class="col-sm-12 col-12 small-screen-col-body-text">
+                            <h4 class="small-screen-text-bold-basics">Most Successful <br> transactions</h4>
+                            <div class="row-bar"></div>
+                            <h6 class="small-screen-text-basic-line">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Dolorum, laboriosam ullam! Fugiat sed sit architecto, blanditiis 
+                                nam a ipsam cupiditate nemo deleniti sunt excepturi illo 
+                                culpa consequatur minus laudantium odit.
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 col-12 small-screen-main-body-text">
+                    <div class="row" style="margin-top: 50px;">
+                        <div class="col-sm-12 col-12 small-screen-body-col-text-style">
+                            <h4 class="small-screen-text-bold-basics">More for <br> Less</h4>
+                            <div class="row-bar"></div>
+                            <h6 class="small-screen-text-basic-line">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Dolorum, laboriosam ullam! Fugiat sed sit architecto, blanditiis 
+                                nam a ipsam cupiditate nemo deleniti sunt excepturi illo 
+                                culpa consequatur minus laudantium odit.
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 col-12 small-screen-main-body-text">
+                    <div class="row" style="margin-top: 50px;">
+                        <div class="col-sm-12 col-12 col-12 small-screen-body-col-text-style">
+                            <h4 class="small-screen-text-bold-basics">Highly Safe <br> & Secured</h4>
+                            <div class="row-bar"></div>
+                            <h6 class="small-screen-text-basic-line">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Dolorum, laboriosam ullam! Fugiat sed sit architecto, blanditiis 
+                                nam a ipsam cupiditate nemo deleniti sunt excepturi illo 
+                                culpa consequatur minus laudantium odit.
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!------ end of 3rd row-------->
+
+
+        <!-------------4th row---------->
+        <div class="row p-4">
+
+            <div class="col-sm-12 col-12">
+                <h5 class="text-muted small-screen-join-text">Join the community of business powered by fuspay</h5>
+            </div>
+            <div class="col-sm-12 col-12">
+                <h6 class="text-muted small-screen-first-text-on-join">
+                    Lorem ipsum dolor sit, amet conse.<br>
+                    Officiis veritatis illum consectetur 
+                </h6>
+                <h6 class="text-muted small-screen-first-text-on-join">
+                    Lorem ipsum dolor sit, amet consec.<br>
+                    Officiis veritatis illum consectetu
+                </h6>
+            </div>
+
+            
+             
+            <div class="col-sm-12 col-12" style="margin-top: 20px;">
+                <h6 class="text-muted" style="font-weight: bold;">What's your industry</h6>
+                <div style="overflow: hidden;" id="body-text2">
+                    <h6 class="sib2">Betting</h6>
+                    <h6 class="sib2">Airlines</h6>
+                    <h6 class="sib2">E-commerce</h5>
+                    <h6 class="sib2">Transportation</h6>
+                    <h6 class="sib2">Digital Solution</h6>
+                </div> 
+            </div>
+
+
+            
+            <div class="col-sm-12 col-12">
+                <div class="row" style="margin-top: 10px; margin-bottom: 20px;">
+                    <div class="col-sm-12 col-12">
+                        <h6 style="font-weight: bold; padding-top: 20px;">Our Client</h6>
+                    </div>
+
+                    <div class="owl-carousel2"> 
+                        <div class="item">
+                            <img src="index75434567.png" class="img-fluid small-screen-image-logo">
+                        </div>
+                
+                        <div class="item">
+                            <img src="index8997.png" class="img-fluid small-screen-image-logo">
+                        </div>
+
+                        <div class="item">
+                            <img src="index09865.png" class="img-fluid small-screen-image-logo">
+                        </div>
+
+                        <div class="item">
+                            <img src="index75434567.png" class="img-fluid small-screen-image-logo">
+                        </div>
+
+                        <div class="item">
+                            <img src="index8997.png" class="img-fluid small-screen-image-logo">
+                        </div>
+
+                        <div class="item">
+                            <img src="index09865.png" class="img-fluid small-screen-image-logo">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <!----------5th row ---------->
+        <div class="row p-4 small-screen-footer-main-con">
+
+            <div class="col-sm-12 col-12">
+                <img src="index985757693.png" alt="" style="width: 100px;">
+            </div>
+            <div class="col-sm-12 col-12" style="margin-top: 30px;">
+                <h5 class="small-screen-details-header">Contact</h5>
+                <h6 class="small-screen-phone-no">(234) 8101018131</h6>
+                <h6 class="small-screen-phone-no">(234) 8129906893</h6>
+                <h6 class="small-screen-address">Block D, Providence Garden Estate, Opposite Russell Int'l Off Lekki-Epe Expressway Lagos</h6>
+                <h6 class="small-screen-email-address">askus@fuspay.com.ng</h6>
+                <h6 class="text-center small-screen-chat-us-btn">Chat with Customer Care</h6>
+            </div>
+
+            <div class="col-sm-12 col-12 small-screen-product-col-con">
+                <h5 class="small-screen-details-header">Product</h5>
+                <h6 class="small-screen-products-links">Receive Money with Phone Number</h6>
+                <h6 class="small-screen-products-links">Payment Links</h6>
+                <h6 class="small-screen-products-links">Fuspay Wallet</h6>
+                <h6 class="small-screen-products-links">Fuspay USSD (*347*36#)</h6>
+                <h6 class="small-screen-products-links">Fuspay API</h6>
+                <h4 class="small-screen-details-sub-header">I'm a Fintech, I want to bulid on Fuspay</h4>
+                <h6 class="text-center small-screen-partner-btn">Partner with Fuspay</h6>
+            </div>
+
+
+            
+            <div class="col-sm-12 col-12">
+                <h5 class="small-screen-details-header">Quick Links</h5>
+                <h6 class="small-screen-quick-link-links">Terms of Use</h6>
+                <h6 class="small-screen-quick-link-links">Privacy Policies</h6>
+                <h6 class="small-screen-quick-link-links">Dispute Resolution</h6>
+                <h6 class="small-screen-quick-link-links">Frequently Asked Questions</h6>
+                <h6 class="small-screen-quick-link-links">Partnership</h6>
+                <h6 class="small-screen-quick-link-links">About Us</h6>
+                <h5 class="small-screen-details-header">Community</h5>
+                <h6 class="small-screen-learn-text">Learn more about how fuspay cantransfor your business</h6>
+                <input class="" type="text" name="" style="border: 0px; border-radius: 40px; background-color: rgb(255, 239, 229); padding: 10px; padding-left: 20px; width: 100%;" placeholder="Your Email">
+                <span class="fa fa-arrow-right" style="border-radius: 30px; background-color: darkblue; color: white; padding: 5px 10px 5px 10px; border: 2px groove orangered; position: absolute; bottom: 5px; right: 30px;"></span>
+            </div>
+
+           
+            <div class="col-12 col-12">
+                <h6 class="text-center small-screen-last-footer-text">2020 Fuspay Technology. All rights reserved <br> Fuspay a Subsidiary of Coval Emporium Limited</h6>
+            </div>
+
+        </div>
+
+      
+
+        <!-----------end of 4th row------>
+
+
+
+        
+       
+
+    </div>
+
+
+
+
+    
+</body>
+
+<footer class="large-screen-footer d-none d-md-block">
+    
+    <div class="container d-none d-md-block bg-white">
+
+        <!--------------Fiveth row--------------->
+
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-lg-3 col-xl-3 col-md-3">
+                <img class="fiveth-row-image-logo img-fluid" src="index985757693.png" alt="">
+            </div>
+            <div class="col-lg-3 col-xl-3 col-md-3">
+                <h5 class="fiveth-row-title-text">Contact</h5>
+                <h6 class="footer-content-text-phone">(234) 8101018131</h6>
+                <h6 class="footer-content-text-phone">(234) 8129906893</h6>
+                <h6 class="fiveth-row-address-text">Block D, Providence Garden Estate, Opposite Russell Int'l Off Lekki-Epe Expressway Lagos</h6>
+                <h6 class="fiveth-row-email-address-text">askus@fuspay.com.ng</h6>
+                <h6 class="text-center fiveth-row-chat-btn">Chat with Customer Care</h6>
+            </div>
+
+            <div class="col-lg-3 col-xl-3 col-md-3">
+                <h5 class="fiveth-row-title-text">Product</h5>
+                <h6 class="footer-content-text-on-products">Receive Money with Phone Number</h6>
+                <h6 class="footer-content-text-on-products">Payment Links</h6>
+                <h6 class="footer-content-text-on-products">Fuspay Wallet</h6>
+                <h6 class="footer-content-text-on-products">Fuspay USSD (*347*36#)</h6>
+                <h6 class="footer-content-text-on-products">Fuspay API</h6>
+                <h4 class="pt-4 fiveth-row-title-text">I'm a Fintech, I want to bulid on Fuspay</h4>
+                <h6 class="text-center fiveth-row-partner-with-us-btn">Partner with Fuspay</h6>
+            </div>
+
+            <div class="col-lg-3 col-xl-3 col-md-3">
+                <h5 class="fiveth-row-title-text">Quick Links</h5>
+                <h6 class="footer-content-text-on-quick-links">Terms of Use</h6>
+                <h6 class="footer-content-text-on-quick-links">Privacy Policies</h6>
+                <h6 class="footer-content-text-on-quick-links">Dispute Resolution</h6>
+                <h6 class="footer-content-text-on-quick-links">Frequently Asked Questions</h6>
+                <h6 class="footer-content-text-on-quick-links">Partnership</h6>
+                <h6 class="footer-content-text-on-quick-links">About Us</h6>
+                <h5 class="fiveth-row-title-text">Community</h5>
+                <h6 class="footer-content-text-on-quick-learn" style="margin-bottom: 10px;">Learn more about how fuspay cantransfor your business</h6>
+                <input class="footer-email-input-field" type="text" name="" placeholder="Your Email">
+                <span class="fa fa-arrow-right footer-email-send-btn"></span>
+            </div>
+
+        </div> 
+
+        <h6 class="text-center footer-text">2020 Fuspay Technology. All rights reserved <br> Fuspay a Subsidiary of Coval Emporium Limited</h6>
+    </div>
+</footer>
+
+<script src="slider/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="slimscroll/jquery.slimscroll.js"></script>
+<script src="index.js"></script>
+
+<script>
+
+      
+$(".owl-carousel").owlCarousel({
+    autoPlay: 3000,
+    items: 3,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true,
+    pagination: false
+});
+
+
+
+$(".owl-carousel2").owlCarousel({
+    autoPlay: 3000,
+    items: 2,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true,
+    pagination: false,
+    itemsMobile: [479,2]
+});
+
+</script>
+
+
+</html>

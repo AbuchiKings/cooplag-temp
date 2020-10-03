@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="owl/owl.carousel.css">
+    <link rel="stylesheet" href="owl/owl.theme.css">
+    
+    <script src="owl/owl.carousel.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="slider/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!----
+    <script src="jquery-ui/jquery-ui.js"></script>
+    
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.structure.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.theme.css">
+    --->
+    
+    <script src="index.js"></script>
+    
+
+    <title>Dashboard</title>
+    
+</head>
+<body>
+
+   
+
+    <section class="container-fluid section-one-main-header-con">
+        <div class="row section-one-first-row">
+            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-4 col-4 p-3 section-one-row-one-first-col">
+                <span class="section-one-row-one-fair-text">fair</span>
+                <span class="section-one-row-one-square-text">Square</span>
+                <span class="pl-2 d-none d-md-block d-sm-block d-block d-md-none d-lg-none d-xl-none section-one-row-one-small-screen-menu fa fa-bars"></span>
+            </div>
+            <div class="col-lg-10 col-xl-10 col-md-10 col-sm-8 col-8 p-3 pr-5 section-one-row-one-second-col">
+                <span class="fa fa-angle-down row-one-header-icon"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid section-two-main-con">
+        <div class="row section-two-row-one">
+            <div class="col-lg-2 col-xl-2 col-md-2 pt-4 pb-5 section-two-row-one-first-col d-none d-md-block">
+                <ul class="section-two-ul-container">
+                    <li class="section-two-first-col-list-item"><span class="fa fa-home section-two-first-col-links-icon"></span>Home</li>
+                    <li class="section-two-first-col-list-item"><span class="fa fa-gear section-two-first-col-links-icon"></span>Setting</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-10 col-xl-10 col-md-10 section-two-second-col">
+                <h3 class="pt-5 pl-5 section-two-row-one-second-col-first-text">Hi Charles,</h3>
+                <h6 class="pl-5 pt-2 section-two-row-one-second-text pb-5">Welcome to FairSqure. You can get started by creating<br> your own fair in less than 10 minutes</h6>
+                <!-----data-toggle="modal" data-target="#createFairStepOne"-->
+                <span id="openStepOneModal" class="pl-5 fa fa-plus-square section-two-row-two-col-two-add-icon"></span>
+                <span class="pt-5 pl-5 section-two-row-two-create-text">Create New Fair</span>
+                <h4 class="pl-5 section-two-row-one-second-col-all-text mt-5">All Fair</h4>
+
+               
+                <!-------Larger Screen table--------->
+                <table class="table table-responsive-xl table-responsive-sm table-responsive-lg table-responsive-md table-borderless section-two-row-two-table-container">
+                    <tr class="section-two-row-two-table-row-one">
+                        <td class="table-row-one-cell-icon"><span class="fa fa-trash table-row-one-cell-trash-icon"></span></td>
+                        <td class="table-row-one-cell-text text-primary">01/09/2020 9:40AM</td>
+                        <td class="table-row-one-cell-text">Outdoor#20</td>
+                        <td class="table-row-one-cell-icon"><span class="fa fa-toggle-on table-row-one-cell-toggle-icon"></span></td>
+                        <td class="table-row-one-cell-text">Standard</td>
+                        <td class="table-row-one-cell-text">Edit</td>
+                        <td class="table-row-one-cell-text-login">Login to Fair Admin</td>
+                    </tr>
+                </table>
+               
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<!-------Create fair Modal  step one-------->
+
+<div class="modal fade" data-backdrop="static" id="createFairStepOne" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-xl modal-md" role="document" style="background-color: white; border-radius: 5px;">
+      <div class="modal-content" style="border-radius: 5px 5px 0px 0px; width: 100%;">
+        <div class="modal-body">
+            <div class="container-fluid modal-step-one-create-fair-container">
+
+            <h6 class="step-up-title-text pt-2 pb-2">Create Your Fair in four steps</h6>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs row">
+                <li class="nav-item col-lg-3 col-xl-3 col-md-3">
+                    <span id="stepOneLink" class="nav-link active" data-toggle="tab" data-target="#stepOneCon" class="modal-step-one-text-active">Step 1</span>
+                    <span id="sub-step-one" class="modal-step-one-sub-text">Fair Information</span>
+                </li> 
+                <li class="nav-item col-lg-3 col-xl-3 col-md-3">
+                    <span id="stepTwoLink" class="nav-link" data-toggle="tab" data-target="#stepTwoCon">Step 2</span>
+                    <span id="sub-step-two" class="modal-step-one-sub-text d-none">Set up Environment</span>
+                </li>
+                <li class="nav-item col-lg-3 col-xl-3 col-md-3">
+                    <span id="stepThreeLink" class="nav-link" data-toggle="tab" data-target="#stepThreeCon">Step 3</span>
+                    <span id="sub-step-three" class="modal-step-one-sub-text d-none">Vendor's Settings</span>
+                </li>
+                <li class="nav-item col-lg-3 col-xl-3 col-md-3">
+                    <span id="stepFourLink" class="nav-link" data-toggle="tab" data-target="#stepFourCon">Step 4</span>
+                    <span id="sub-step-four" class="modal-step-one-sub-text d-none">Payment Set up</span>
+                </li>
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane container active pt-3" id="stepOneCon">
+                    <div class="row modal-step-one-second-row">
+                        <div class="pt-4 col-lg-6 col-md-6 col-xl-6 modal-step-one-second-row-col-first">
+                            
+                            <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                <label class="step-one-modal-form-label-text" for="">Name your Fair</label>
+                                <input type="text" class="form-control step-one-modal-form-input">
+                            </div>
+    
+                            <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                <label class="step-one-modal-form-label-text" for="">Select Fair Category</label>
+                               <h6 class="step-one-modal-form-input-select-fair-category"></h6>
+                                <select name="" class="form-control custom-select step-one-modal-form-input">
+                                    <option value=""></option>
+                                    <option value="">Fashion Fair</option>
+                                    <option value="">Electronics Fair</option>
+                                    <option value="">Game Fair</option>
+                                    <option value="">Sports Fair</option>
+                                </select>
+                            </div>
+    
+                            <div class="pl-4 pt-1 pb-1 pr-4 mb-3 modal-step-one-second-row-col-first-form-con-text-area-con">
+                                <label class="step-one-modal-form-label-text" for="">Fair Description</label>
+                               <textarea name="" id="" cols="30" rows="10" class="form-control step-one-modal-form-textarea"></textarea>
+                            </div>
+    
+                            <div class="d-flex">
+                                <div class="pl-3 pt-1 pb-1 pr-3 mb-3 mr-5 modal-step-one-second-row-col-first-form-con">
+                                    <label class="step-one-modal-form-label-text" for="">Start Date</label>
+                                    <input type="text" class="form-control step-one-modal-form-input">
+                                </div>
+                                <div class="pl-3 pt-1 pb-1 pr-3 mb-3 modal-step-one-second-row-col-first-form-con">
+                                    <label class="step-one-modal-form-label-text" for="">End Date</label>
+                                    <input type="text" class="form-control step-one-modal-form-input">
+                                </div>
+    
+                            </div>
+                        </div>
+                        <!---end of first col 6 ---->
+    
+                        <div class="col-lg-6 col-xl-6 col-md-6">
+                            <h6>Banner Slider</h6>
+                            <div id="demo" class="carousel slide mb-4" data-ride="carousel" style="height: 200px;">
+    
+                               <!--------- Indicators ----->
+                                <ul class="carousel-indicators">
+                                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                    <li data-target="#demo" data-slide-to="1"></li>
+                                    <li data-target="#demo" data-slide-to="2"></li>
+                                </ul>
+    
+                                <!------ The slideshow ---->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                    <img src="mylager.jpg" alt="Los Angeles" style="height: 200px; border-radius: 10px; width: 100%;">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="hgfd.jpg" alt="Chicago" style="height: 200px; border-radius: 10px; width: 100%;">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="online-shopping-banner_82574-3393.jpg" alt="New York" style="height: 200px; border-radius: 10px; width: 100%;">
+                                    </div>
+                                </div>
+    
+                                <!------- Left and right controls ------->
+                                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#demo" data-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
+                            </div>
+    
+    
+                            <h6>Dimensions: xx bb yy</h6>
+                            <div class="mb-1 step-one-upload-image-con"></div>
+                            <h6 class="mb-3">Upload Image</h6>
+    
+                            <div class="d-flex">
+                                <div class="p-1">
+                                    <div class="mb-1 step-one-upload-image-con"></div>
+                                    <h6 class="mb-3">Partner's Logo</h6>
+                                </div>
+                                <div class="step-one-add-partner-con">
+                                    <span class="pl-5 fa fa-plus-square section-two-row-two-col-two-add-icon"></span>
+                                    <h6>Add another partner</h6>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row modal-step-one-second-row">
+                        <div class="col-lg-2 col-xl-2 col-md-2">
+                            <button id="goToStepTwo" class="btn btn-success btn-block">Proceed</button>
+                        </div>
+    
+                        <div class="col-lg-2 col-xl-2 col-md-2">
+                            <button id="closeModal" class="btn btn-outline-success btn-block">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!---------end of first tab con------------->
+
+
+                <!---------2nd tab------>
+                <div class="tab-pane container fade pt-3" id="stepTwoCon">
+                    <div class="row modal-step-one-second-row">
+                        <div class="pt-4 col-lg-6 col-md-6 col-xl-6 modal-step-one-second-row-col-first">
+                            
+                            <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                <label class="step-one-modal-form-label-text" for="">Total Expected Vendors</label>
+                                <select name="name" class="form-control custom-select step-one-modal-form-input">
+                                    <option value="">one</option>
+                                    <option value="">two</option>
+                                    <option value="">three</option>
+                                </select>
+                            </div>
+    
+                            <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                <label class="step-one-modal-form-label-text" for="">Fair Type</label> 
+                                <select name="" class="form-control custom-select step-one-modal-form-input">
+                                    <option value=""></option>
+                                    <option value="">Fashion Fair</option>
+                                    <option value="">Electronics Fair</option>
+                                    <option value="">Game Fair</option>
+                                    <option value="">Sports Fair</option>
+                                </select>
+                            </div>
+    
+                            <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                <label class="step-one-modal-form-label-text" for="">Fair Environment</label> 
+                                <select name="" class="form-control step-one-modal-form-input custom-select">
+                                    <option value=""></option>
+                                    <option value="">Fashion Fair</option>
+                                    <option value="">Electronics Fair</option>
+                                    <option value="">Game Fair</option>
+                                    <option value="">Sports Fair</option>
+                                </select>
+                            </div>
+    
+                            <h6 class="step-two-panel-session-text">Set Up Events</h6>
+                            <div class="pl-4 pt-1 pb-1 pr-4 mb-3 modal-step-one-second-row-col-first-form-con-text-area-con">
+                                
+                                <div class="d-flex">
+                                    <div class="p-2">
+                                        <span class="step-two-events-elements">Conference</span>
+                                        <input type="radio" value="" name="events" class="step-two-radio-btn">
+                                    </div>
+                                    <div class="p-2">
+                                        <span class="step-two-events-elements">Network Room</span>
+                                        <input type="radio" value="" name="events" class="step-two-radio-btn">
+                                    </div>
+                                    <div class="p-2">
+                                        <span class="step-two-events-elements">Panel Session</span>
+                                        <input type="radio" value="" name="events" class="step-two-radio-btn">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <h6 class="step-two-panel-session-text">Set Up Panel Session</h6>
+                            <div class="d-flex">
+                                <div class="pt-1 pb-1 mb-3 mr-5 modal-step-one-second-row-col-first-form-con">
+                                    <label class="step-one-modal-form-label-text" for="">Number of Panelist</label>
+                                    <select name="" class="form-control step-one-modal-form-input custom-select">
+                                        <option value=""></option>
+                                        <option value="">Fashion Fair</option>
+                                        <option value="">Electronics Fair</option>
+                                        <option value="">Game Fair</option>
+                                        <option value="">Sports Fair</option>
+                                    </select>
+                                </div>
+                                <div class="pt-1 pb-1 mb-3 modal-step-one-second-row-col-first-form-con">
+                                    <label class="step-one-modal-form-label-text" for="">Number of Speakers</label>
+                                    <select name="" class="form-control step-one-modal-form-input custom-select">
+                                        <option value=""></option>
+                                        <option value="">Fashion Fair</option>
+                                        <option value="">Electronics Fair</option>
+                                        <option value="">Game Fair</option>
+                                        <option value="">Sports Fair</option>
+                                    </select>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <!----end of first col 6 --------->
+    
+                        <div class="col-lg-6 col-xl-6 col-md-6">
+                            <div id="demo" class="carousel slide mb-4" data-ride="carousel" style="height: 200px;">
+    
+                                <!------ Indicators ------>
+                                <ul class="carousel-indicators">
+                                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                    <li data-target="#demo" data-slide-to="1"></li>
+                                    <li data-target="#demo" data-slide-to="2"></li>
+                                </ul>
+    
+                                <!-------- The slideshow ------->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                    <img src="mylager.jpg" alt="Los Angeles" style="height: 200px; border-radius: 10px; width: 100%;">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="hgfd.jpg" alt="Chicago" style="height: 200px; border-radius: 10px; width: 100%;">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="online-shopping-banner_82574-3393.jpg" alt="New York" style="height: 200px; border-radius: 10px; width: 100%;">
+                                    </div>
+                                </div>
+    
+                                <!------- Left and right controls ------->
+                                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#demo" data-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
+                            </div>
+    
+                            <h6 class="step-two-panel-session-text mt-4">Select Conference Room</h6>
+                            <div class="mb-1 step-two-conference-room"></div>
+    
+                            <h6 class="step-two-panel-session-text mt-4">Select Panel Session Room</h6>
+                            <div class="mb-1 step-two-conference-room"></div>
+                        </div>
+                    </div><!----- end of row -->
+    
+                    <div class="row modal-step-one-second-row">
+                        <div class="col-lg-2 col-xl-2 col-md-2">
+                            <button id="goToStepThree" class="btn btn-success btn-block">Proceed</button>
+                        </div>
+    
+                        <div class="col-lg-2 col-xl-2 col-md-2">
+                            <button id="goBackToStepOne" class="btn btn-outline-success btn-block">Back</button>
+                        </div>
+                    </div>
+                </div>
+                <!-------end of 2nd tab--------->
+
+
+                <!-----------3rd tab ------------------->
+                <div class="tab-pane container fade" id="stepThreeCon">
+                    <div class="row modal-step-one-second-row">
+                        <div class="pt-4 col-lg-6 col-md-6 col-xl-6 modal-step-one-second-row-col-first">    
+                            <h6 class="mb-4 text-muted vendor-sign-up-title">Vendors Signup Link</h6>
+                            <div class="d-flex">
+                                <div class="vendor-signup-default-link-con">
+                                    <h6 class="vendor-signup-default-link pl-4 pt-3 pb-3 pr-3">https://vcfair.com</h6>
+                                </div>
+                                <div class="vendor-signup-custom-link-con pl-3 pt-2 pb-2 pr-4">
+                                    <input type="text" placeholder="Customize fair URL" class="form-control vendor-signup-input">
+                                </div>
+                            </div>
+                            
+                            
+                            <h6 class="vendor-name-text mt-5 mb-3"><input type="radio" class="vendor-radio-name">Collect Name & Phone Number</h6>
+                            <h5 class="text-muted mt-2 mb-3 vendor-additional-info">Collect Additional information from Vendors</h5>
+                            <div class="d-flex">
+                                <div class="pt-3 pr-3">
+                                    <h6 class="add-field-text"><span class="fa fa-plus add-vendor-field-icon"></span>Add New Field</h6>
+                                </div>
+                                <div>
+                                    <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                        <label class="step-one-modal-form-label-text" for="">Field Type</label> 
+                                        <select name="" class="form-control step-one-modal-form-input custom-select">
+                                            <option value="">Input/File etc</option>
+                                            <option value="">Electronics Fair</option>
+                                            <option value="">Game Fair</option>
+                                            <option value="">Sports Fair</option>
+                                        </select>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                      
+                        <!----end of first col 6 --------->
+                        <div class="col-lg-6 col-xl-6 col-md-6 pt-4">
+                            <h6 class="text-muted mb-3 vendor-signup-free">Set Vendor's Sign Up Free</h6>
+
+                            <div class="row">
+                                <div class="col-lg-7 col-xl-7 col-md-7">
+                                    <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                        <label class="step-one-modal-form-label-text" for="">Vendor's Category</label>
+                                        <input type="text" class="form-control step-one-modal-form-input">
+                                    </div>
+        
+                                    <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                        <label class="step-one-modal-form-label-text" for="">Vendor's Sign up price</label>
+                                        <input type="text" class="form-control step-one-modal-form-input">
+                                    </div>
+        
+                                    <div class="pl-5 pt-1 pb-1 pr-5 mb-3 modal-step-one-second-row-col-first-form-con">
+                                        <label class="step-one-modal-form-label-text" for="">Select Category Features</label>
+                                        <input type="text" class="form-control step-one-modal-form-input">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 col-xl-5 col-md-5 add-feature-con">
+                                    <h6 class="add-feature-text"><span class="fa fa-plus add-vendor-field-icon"></span>Add Another Feature</h6>
+                                </div>
+                            </div>
+
+                            <h5 class="add-field-text mt-4"><span class="fa fa-plus add-vendor-field-icon"></span>Add Another Category</h5>     
+                        </div>
+
+                    </div><!----- end of row -->
+                    <div class="row step-three-second-row">
+                        <div class="col-lg-2 col-xl-2 col-md-2">
+                            <button id="goToStepFour" class="btn btn-success btn-block">Proceed</button>
+                        </div>
+    
+                        <div class="col-lg-2 col-xl-2 col-md-2">
+                            <button id="goBackToStepTwo" class="btn btn-outline-success btn-block">Back</button>
+                        </div>
+                    </div>
+                </div>
+                <!---------end of step three tab body------->
+
+                
+
+                <!-----------four tab ------------------->
+                <div class="tab-pane container fade" id="stepFourCon">
+
+                    <h6 class="text-muted p-3 step-four-title-text">Set up how you want people to you in your Fair</h6>
+                    <div class="row modal-step-one-second-row">
+                        
+                        <div class="pt-4 col-lg-6 col-md-6 col-xl-6 modal-step-one-second-row-col-first">    
+                            <h6 class="step-four-payment-option"><input type="radio" name="vendor-payment" class="vendor-payment-method"> Payment Option A</h6>
+                            <h6 class="step-four-payment-option"><input type="radio" name="vendor-payment" class="vendor-payment-method"> Payment Option C</h6>
+                        </div>
+
+                        <div class="pt-4 col-lg-6 col-md-6 col-xl-6 modal-step-one-second-row-col-first">    
+                            <h6 class="step-four-payment-option"><input type="radio" name="vendor-payment" class="vendor-payment-method"> Payment Option B</h6>
+                            <h6 class="step-four-payment-option"><input type="radio" name="vendor-payment" class="vendor-payment-method"> Payment Option D</h6>
+                        </div>
+                    
+                    </div><!----- end of row -->
+    
+    
+                    <div class="row step-three-second-row">
+                        <div class="col-lg-2 col-xl-2 col-md-2">
+                            <button id="preview" class="btn btn-success btn-block">Preview</button>
+                        </div>
+    
+                        <div class="col-lg-2 col-xl-2 col-md-2">
+                            <button id="goBackToStepThree" class="btn btn-outline-success btn-block">Back</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!---------end of step four tab body------->
+
+
+
+            </div>    
+
+
+
+               
+
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+
+
+
+
+<script>
+
+
+
+
+
+
+
+</script>
+
+</html>
